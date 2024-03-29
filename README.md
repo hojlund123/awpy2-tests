@@ -21,3 +21,8 @@
 **analytics**
 
 - awpy.adr()
+
+
+**folder structure**
+```
+{tournament_mode} / {tournament} / {match-id}"-"{team1}"-vs-"{team2} / kills / {filehash}.json
