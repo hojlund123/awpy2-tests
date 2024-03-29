@@ -3,20 +3,21 @@
 **parsers**
 - awpy.kills()
 
-awpy.damages()
+- awpy.damages()
 
-awpy.bomb()
+- awpy.bomb()
 
-awpy.smokes()
+- awpy.smokes()
 
-awpy.infernos()
+- awpy.infernos()
 
-awpy.weapon_fires()
+- awpy.weapon_fires()
 
-demoparser.scoreboard()
+- demoparser.scoreboard()
 
-demoparser.crosshairs()
+- demoparser.crosshairs()
+
 
 **analytics**
 
-awpy.adr()
+-awpy.adr()
