@@ -20,4 +20,4 @@
 
 **analytics**
 
--awpy.adr()
+- awpy.adr()
