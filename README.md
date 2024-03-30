@@ -17,6 +17,8 @@
 
 - demoparser.crosshairs()
 
+- demopaser.skins()
+
 
 **analytics**
 
