@@ -306,6 +306,7 @@ def download_demo_file(demo_link, result, api_url=FLARE_SOLVERR_URL):
                 wanted_fields = ["kills_total", "deaths_total", "mvps", "headshot_kills_total", "ace_rounds_total", "4k_rounds_total", "3k_rounds_total"]
                 scoreboard = parser.parse_ticks(wanted_fields, ticks=[max_tick])
 
+                skins = parser.parse_skins()
                 #ticks_df = parser.parse_ticks(["X", "Y"])
                 file_hash = compute_file_hash(f"extracted_files/{file}")
                 
@@ -319,6 +320,7 @@ def download_demo_file(demo_link, result, api_url=FLARE_SOLVERR_URL):
                 crosshair_output_dir = f"{result['tourney-mode']}/{result['event']}/{result['match-id']}-{result['team1']}-vs-{result['team2']}/crosshair_codes"
                 scoreboard_output_dir = f"{result['tourney-mode']}/{result['event']}/{result['match-id']}-{result['team1']}-vs-{result['team2']}/scoreboard"
                 adr_output_dir = f"{result['tourney-mode']}/{result['event']}/{result['match-id']}-{result['team1']}-vs-{result['team2']}/adr"
+                skins_output_dir = f"{result['tourney-mode']}/{result['event']}/{result['match-id']}-{result['team1']}-vs-{result['team2']}/skins"
                 
                 print("Parsing finished")
                 # Save event_df and ticks_df to JSON files
@@ -332,12 +334,14 @@ def download_demo_file(demo_link, result, api_url=FLARE_SOLVERR_URL):
                 os.makedirs(crosshair_output_dir, exist_ok=True)
                 os.makedirs(scoreboard_output_dir, exist_ok=True)
                 os.makedirs(adr_output_dir, exist_ok=True)
+                os.makedirs(skins_output_dir, exist_ok=True)
 
                 # Testing demoparser2
                 #event_df.to_json(f'{output_dir}/events.json', indent=4)
                 crosshairs.to_json(f'{crosshair_output_dir}/{file_hash}.json', indent=1)
                 scoreboard.to_json(f'{scoreboard_output_dir}/{file_hash}.json', indent=1)
-
+                skins.to_json(f'{skins_output_dir}/{file_hash}.json', indent=1)
+                
                 # Testing Awpy2
                 #ticks_df.to_json(f'{ticks_output_dir}/{file_hash}.json', indent=4)
                 parsed_demo.kills.to_json(f'{kills_output_dir}/{file_hash}.json', indent=1)
