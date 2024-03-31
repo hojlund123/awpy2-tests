@@ -92,7 +92,7 @@ def _monthNameToNumber(monthName: str):
     return datetime.datetime.strptime(monthName, "%B").month
 
 def get_results():
-    results = get_parsed_page("https://www.hltv.org/results?offset=200")
+    results = get_parsed_page("https://www.hltv.org/results")
 
     results_list = []
 
