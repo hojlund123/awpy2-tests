@@ -29,10 +29,10 @@ jobs:
       run: pip install git+https://github.com/pnxenopoulos/awpy@awpy2
 
     - name: Pull Docker image
-      run: docker pull ghcr.io/flaresolverr/flaresolverr:v3.3.17
+      run: docker pull ghcr.io/flaresolverr/flaresolverr:v3.3.21
 
     - name: Run FlareSolverr
-      run: docker run -d --name flaresolverr-container -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:v3.3.17
+      run: docker run -d --name flaresolverr-container -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:v3.3.21
 
     - name: Wait for FlareSolverr to start
       run: sleep 20
