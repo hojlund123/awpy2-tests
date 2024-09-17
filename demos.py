@@ -260,7 +260,7 @@ def download_demo_file(demo_link, result, api_url=FLARE_SOLVERR_URL):
         user_agent = response_data["solution"]["userAgent"]
 
         # Request the demo file with obtained cookies and user agent
-        demo_file = requests.get(demo_link, cookies=cookies, headers={"User-Agent": user_agent})
+        demo_file = requests.get(demo_link, cookies=cookies, headers={"User-Agent": user_agent}, allow_redirects=True)
         demo_file.raise_for_status()
 
         # Save the demo file
